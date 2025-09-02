@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -36,3 +40,33 @@
     transform: rotate(360deg);
   }
 }
+
+/* .animated-bg {
+  background: linear-gradient(270deg, #f8fafc, #e2e8f0, #f1f5f9);
+  background-size: 600% 600%;
+  animation: gradientMove 20s ease infinite;
+} */
+
+.animated-bg {
+  background: linear-gradient(-45deg, #dbeafe, #f3e8ff, #fce7f3, #e0f2fe);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glow-bg {
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(99, 102, 241, 0.3), transparent 40%);
+}
+
