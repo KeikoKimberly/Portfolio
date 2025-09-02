@@ -8,8 +8,8 @@ export const PROFILE = {
   email: "keikokimberly18@gmail.com",
   avatar: profilePic,
   socials: [
-    { icon: Github, label: "GitHub", href: "https://github.com/" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/" },
+    { icon: Github, label: "GitHub", href: "https://github.com/KeikoKimberly" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/keikokimberly18/" },
     // { icon: Globe, label: "Website", href: "https://yourdomain.com" },
   ],
 };
