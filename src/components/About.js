@@ -14,13 +14,14 @@ export default function About() {
             Available for freelance
           </div> */}
           <h1 className="relative mt-4 text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent inline-block align-baseline pb-2">
+            <motion.span
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent bg-[length:200%_200%] inline-block"
+              whileHover={{ backgroundPosition: "100% 0%" }}
+              transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+            >
               Hi, I’m {PROFILE.name}. I design & build delightful web apps.
-            </span>
+            </motion.span>
           </h1>
-
-
-
 
           <p className="mt-4 max-w-prose text-slate-600 leading-relaxed">
             {PROFILE.title}
@@ -34,29 +35,50 @@ export default function About() {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="rounded-2xl bg-slate-900 text-white px-4 py-2 text-sm shadow hover:shadow-md transition">
+            <motion.a
+              href="#contact"
+              className="rounded-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white px-4 py-2 text-sm shadow"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               Get in touch
-            </a>
-            <a href="#experience" className="rounded-2xl border px-4 py-2 text-sm hover:bg-slate-50">
+            </motion.a>
+
+            <motion.a
+              href="#experience"
+              className="rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-600 text-white px-4 py-2 text-sm shadow"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               View experience
-            </a>
+            </motion.a>
           </div>
         </motion.div>
 
-        {/* Right */}
-        <motion.div initial={{ opacity: 0, scale: .98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .5 }} className="md:justify-self-end">
-          <div className="relative">
-            <img
-              src={PROFILE.avatar}
-              alt="avatar"
-              className="h-56 w-56 md:h-64 md:w-64 rounded-2xl object-cover shadow-lg"
-            />
-            <div className="absolute -bottom-4 -right-4 rounded-2xl bg-white/80 backdrop-blur border p-3 shadow flex items-center gap-3">
-              <MapPin className="h-4 w-4" />
-              <span className="text-sm text-slate-700">{PROFILE.location}</span>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          whileHover={{ scale: 1.05, rotate: 1 }}
+          whileTap={{ scale: 0.98 }}
+          className="relative md:justify-self-end"
+        >
+          <motion.img
+            src={PROFILE.avatar}
+            alt="avatar"
+            className="h-72 w-72 md:h-84 md:w-84 rounded-2xl object-cover shadow-lg"
+            whileHover={{ scale: 1.1 }}   // <--- Image zoom effect
+            transition={{ type: "spring", stiffness: 300 }}
+          />
+
+          <div className="absolute bottom-3 right-3 rounded-lg bg-white/90 backdrop-blur px-3 py-1.5 border shadow flex items-center gap-2">
+            <MapPin className="h-4 w-4 text-slate-600" />
+            <span className="text-sm text-slate-700">{PROFILE.location}</span>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

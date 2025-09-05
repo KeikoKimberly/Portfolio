@@ -26,9 +26,18 @@ function Projects() {
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-16">
-      <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-        Projects
-      </h2>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ scale: 1.05 }}
+        className="text-3xl font-bold tracking-tight text-slate-900 relative inline-block group"
+      >
+        <span>
+          Projects
+        </span>
+      </motion.h2>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {PROJECTS.map((p, idx) => (
